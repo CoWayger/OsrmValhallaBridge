@@ -14,15 +14,17 @@ Before using this bridge application, ensure you have the following prerequisite
 
 4. **Configurations**: Create a configuration file to specify the data sources and other settings required for the bridge application. Sample configuration templates are provided in the `config` directory of this repository.
 
-## Installation
-
-1. Clone this repository to your local machine:
-
-   ```bash
-   git clone https://github.com/your-username/osrm-to-valhalla-bridge.git
-   ```
-
-2. start aplication in PM2 manager
+## Usage in dev
+1. Create .env file in src folder with:
+```
+VALHALLA_ENDPOINT=https://YOUR_VALHALLA_INSTANCE_DOMAIN/route (don't push this file into PR).
+```
+3. start aplication in PM2 manager
    cd src && pm2 start
+
+## Usage with docker
+```
+docker run -it -e VALHALLA_ENDPOINT="https://YOUR_VALHALLA_INSTANCE_DOMAIN/route" -p 3000:3000 cowayger/osrm-valhalla-bridge:latest
+```
 
 [![Publish](https://github.com/CoWayger/OsrmValhallaBridge/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/CoWayger/OsrmValhallaBridge/actions/workflows/docker-publish.yml)
