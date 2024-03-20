@@ -15,9 +15,9 @@ Before using this bridge application, ensure you have the following prerequisite
 4. **Configurations**: Create a configuration file to specify the data sources and other settings required for the bridge application. Sample configuration templates are provided in the `config` directory of this repository.
 
 ## Usage in dev
-1. Create .env file in src folder with:
+1. Create .env file in src folder(don't push this file into PR).:
 ```
-VALHALLA_ENDPOINT=https://YOUR_VALHALLA_INSTANCE_DOMAIN/route (don't push this file into PR).
+VALHALLA_ENDPOINT=https://YOUR_VALHALLA_INSTANCE_DOMAIN/route
 ```
 3. start aplication in PM2 manager
    cd src && pm2 start
