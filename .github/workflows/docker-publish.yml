@@ -20,6 +20,5 @@ jobs:
       - name: Build the hello-docker Docker image
         run: |
           docker build . --tag ghcr.io/cowayger/osrm-valhalla-bridge:latest
-          docker run ghcr.io/cowayger/osrm-valhalla-bridge:latest
           docker push ghcr.io/cowayger/osrm-valhalla-bridge:latest
 
