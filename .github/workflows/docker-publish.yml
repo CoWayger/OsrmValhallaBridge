@@ -33,3 +33,9 @@ jobs:
         run: |
           docker build . --tag ${{ secrets.TEST_REGISTRY_URL }}/osrm-valhalla-bridge:latest
           docker push ${{ secrets.TEST_REGISTRY_URL }}/osrm-valhalla-bridge:latest
+
+      - name: Call Webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.TEST_REGISTRY_WEBHOOK }}
+        run: |
+          curl -X POST $WEBHOOK_URL
