@@ -31,6 +31,7 @@ app.get('/route/v1/driving/:coordinates', (req, res) => {
 
   request.post(valhallaEndpoint, { json: valhallaRequestData }, (valhallaError, valhallaResponse, valhallaBody) => {
     if (valhallaError) {
+      console.error(valhallaError);
       return res.status(500).json({ error: 'Valhalla API error' });
     }
 
